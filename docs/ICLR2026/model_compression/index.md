@@ -426,9 +426,9 @@ item_total: 240
 
 :   This paper improves Post-Training Quantization (PTQ) for diffusion models by learning a set of importance weights for calibration samples across different timesteps via meta-learning. This aligns gradient directions and mitigates gradient conflicts across timesteps in the quantized model.
 
-**[Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)**
+**[Gradient Intrinsic Dimensionality Alignment: Bridging the Gap between LoRA and Full Fine-Tuning](gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md)**
 
-:   To be added after in-depth reading
+:   This paper identifies that the fundamental cause of the performance gap between LoRA and full fine-tuning (FFT) is that the dimension of LoRA's low-rank subspace is far smaller than the number of active update directions in FFT gradients (Gradient Intrinsic Dimensionality, or GID, differing by up to 100x). It proposes an entropy-based estimator to measure layer-wise GID and introduces RaLoRA / RaLoRA-Pro to align LoRA's effective rank with the GID without increasing parameter counts, consistently matching or even exceeding FFT performance on GLUE, GSM8K, HumanEval, MT-Bench, and image classification.
 
 **[GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs](gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md)**
 

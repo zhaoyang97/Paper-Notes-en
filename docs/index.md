@@ -25,7 +25,7 @@ hide:
 <p class="hero-subtitle">AI / LLM / NLP / CV top-venue paper notes — 5-minute reads of core ideas.<br>Covers ACL · CVPR · ICLR · AAAI · NeurIPS · ICCV · ICML · ECCV<br>Continuously updated</p>
 
 <div class="hero-stats">
-<div class="stat"><span class="stat-number">23484</span><span class="stat-label">Notes</span></div>
+<div class="stat"><span class="stat-number">23489</span><span class="stat-label">Notes</span></div>
 <div class="stat"><span class="stat-number">11</span><span class="stat-label">Conferences</span></div>
 <div class="stat"><span class="stat-number">55</span><span class="stat-label">Areas</span></div>
 </div>
@@ -40,7 +40,7 @@ hide:
 
 ### 📷 [CVPR2026](CVPR2026/index.md)
 
-<div class="conf-count">4066 notes · 46 areas</div>
+<div class="conf-count">4067 notes · 46 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
@@ -76,7 +76,7 @@ hide:
 <a class="area-tag" href="CVPR2026/3d_vision/">3D Vision 751</a>
 <a class="area-tag" href="CVPR2026/object_detection/">Object Detection 99</a>
 <a class="area-tag" href="CVPR2026/segmentation/">Segmentation 122</a>
-<a class="area-tag" href="CVPR2026/image_restoration/">Image Restoration 134</a>
+<a class="area-tag" href="CVPR2026/image_restoration/">Image Restoration 135</a>
 <a class="area-tag" href="CVPR2026/remote_sensing/">Remote Sensing 63</a>
 <a class="area-tag" href="CVPR2026/anomaly_detection/">Anomaly Detection 7</a>
 <a class="area-tag" href="CVPR2026/human_understanding/">Human Understanding 151</a>
@@ -132,7 +132,7 @@ hide:
 
 ### 🔬 [ICLR2026](ICLR2026/index.md)
 
-<div class="conf-count">5327 notes · 53 areas</div>
+<div class="conf-count">5331 notes · 53 areas</div>
 
 <div class="area-groups">
 <div class="area-group">
@@ -165,10 +165,10 @@ hide:
 <div class="area-group">
 <div class="area-group-label">Generation & Multimodal</div>
 <div class="area-tags">
-<a class="area-tag" href="ICLR2026/image_generation/">Image Generation 352</a>
+<a class="area-tag" href="ICLR2026/image_generation/">Image Generation 353</a>
 <a class="area-tag" href="ICLR2026/video_generation/">Video Generation 98</a>
 <a class="area-tag" href="ICLR2026/multimodal_vlm/">Multimodal VLM 211</a>
-<a class="area-tag" href="ICLR2026/vlm_reasoning/">VLM Reasoning 111</a>
+<a class="area-tag" href="ICLR2026/vlm_reasoning/">VLM Reasoning 112</a>
 <a class="area-tag" href="ICLR2026/vlm_efficiency/">VLM Efficiency 18</a>
 <a class="area-tag" href="ICLR2026/audio_speech/">Audio & Speech 80</a>
 <a class="area-tag" href="ICLR2026/aigc_detection/">AIGC Detection 30</a>
@@ -184,7 +184,7 @@ hide:
 <a class="area-tag" href="ICLR2026/remote_sensing/">Remote Sensing 11</a>
 <a class="area-tag" href="ICLR2026/anomaly_detection/">Anomaly Detection 10</a>
 <a class="area-tag" href="ICLR2026/human_understanding/">Human Understanding 45</a>
-<a class="area-tag" href="ICLR2026/video_understanding/">Video Understanding 47</a>
+<a class="area-tag" href="ICLR2026/video_understanding/">Video Understanding 48</a>
 </div>
 </div>
 <div class="area-group">
@@ -219,7 +219,7 @@ hide:
 <a class="area-tag" href="ICLR2026/earth_science/">Earth Science 7</a>
 <a class="area-tag" href="ICLR2026/signal_comm/">Signal & Communications 8</a>
 <a class="area-tag" href="ICLR2026/social_computing/">Social Computing 17</a>
-<a class="area-tag" href="ICLR2026/ai_safety/">AI Safety 140</a>
+<a class="area-tag" href="ICLR2026/ai_safety/">AI Safety 141</a>
 </div>
 </div>
 <div class="area-group">

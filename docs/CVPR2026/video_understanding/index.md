@@ -83,7 +83,7 @@ item_total: 187
 
 **📷 CVPR2026** · **187** paper notes
 
-📌 **Same area in other venues:** [🔬 ICLR2026 (47)](../../ICLR2026/video_understanding/index.md) · [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md) · [🧪 ICML2025 (4)](../../ICML2025/video_understanding/index.md)
+📌 **Same area in other venues:** [🔬 ICLR2026 (48)](../../ICLR2026/video_understanding/index.md) · [🧪 ICML2026 (17)](../../ICML2026/video_understanding/index.md) · [🤖 AAAI2026 (27)](../../AAAI2026/video_understanding/index.md) · [🧠 NeurIPS2025 (39)](../../NeurIPS2025/video_understanding/index.md) · [📹 ICCV2025 (56)](../../ICCV2025/video_understanding/index.md) · [🧪 ICML2025 (4)](../../ICML2025/video_understanding/index.md)
 
 🔥 **Top topics:** Object Tracking ×35 · Segmentation ×14 · Compression ×11 · Multimodal/VLM ×10 · Anomaly Detection ×8
 

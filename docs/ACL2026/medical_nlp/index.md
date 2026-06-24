@@ -229,7 +229,7 @@ item_total: 47
 
 **[ProMedical: Hierarchical Fine-Grained Criteria Modeling for Medical LLM Alignment via Explicit Injection](promedical_hierarchical_fine-grained_criteria_modeling_for_medical_llm_alignment.md)**
 
-:   ProMedical utilizes hierarchical fine-grained clinical rubrics, constructed with physician participation, across preference data, reward models, and benchmarks. Through explicit criteria injection to train multi-dimensional reward models, it achieves a improvement of 22.3% in overall accuracy and 21.7% in safety compliance for Qwen3-8B during medical alignment.
+:   ProMedical utilizes hierarchical, fine-grained clinical rubrics co-constructed with medical doctors to guide preference datasets, reward modeling, and benchmarks. Through explicit criteria injection, a multi-dimensional reward model is trained, achieving an improvement of 22.3% in overall accuracy and 21.7% in safety compliance for Qwen3-8B in medical alignment.
 
 **[Query Pipeline Optimization for Cancer Patient Question Answering Systems](query_pipeline_optimization_for_cancer_patient_question_answering_systems.md)**
 

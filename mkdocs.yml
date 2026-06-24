@@ -2621,7 +2621,7 @@ nav:
     - 'VidEoMT: Your ViT is Secretly Also a Video Segmentation Model': CVPR2026/segmentation/videomt_your_vit_is_secretly_also_a_video_segmentation_model.md
     - 'VIRST: Video-Instructed Reasoning Assistant for SpatioTemporal Segmentation': CVPR2026/segmentation/virst_video-instructed_reasoning_assistant_for_spatiotemporal_segmentation.md
     - 'XSeg: A Large-scale X-ray Contraband Segmentation Benchmark for Real-World Security Screening': CVPR2026/segmentation/xseg_a_large-scale_x-ray_contraband_segmentation_benchmark_for_real-world_securi.md
-  - 🖼️ Image Restoration (134):
+  - 🖼️ Image Restoration (135):
     - 🖼️ Image Restoration: CVPR2026/image_restoration/index.md
     - '2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition': CVPR2026/image_restoration/2-shots_in_the_dark_low-light_denoising_with_minimal_data_acquisition.md
     - A Bit is All You Need! Efficient Video Capture via Single Bit Imaging: CVPR2026/image_restoration/a_bit_is_all_you_need_efficient_video_capture_via_single_bit_imaging.md
@@ -2671,6 +2671,7 @@ nav:
     - 'ExpoCM: Exposure-Aware One-Step Generative Single-Image HDR Reconstruction': CVPR2026/image_restoration/expocm_exposure-aware_one-step_generative_single-image_hdr_reconstruction.md
     - 'FAPE-IR: Frequency-Aware Planning and Execution Framework for All-in-One Image Restoration': CVPR2026/image_restoration/fape-ir_frequency-aware_planning_and_execution_framework_for_all-in-one_image_re.md
     - 'FastGaMer: Efficient GainMap Learning for Practical Inverse Tone Mapping': CVPR2026/image_restoration/fastgamer_efficient_gainmap_learning_for_practical_inverse_tone_mapping.md
+    - 'FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution': CVPR2026/image_restoration/fidesr_high-fidelity_and_detail-preserving_one-step_diffusion_super-resolution.md
     - 'FinPercep-RM: A Fine-grained Reward Model and Co-evolutionary Curriculum for RL-based Real-world Super-Resolution': CVPR2026/image_restoration/finpercep_rm_a_fine_grained_reward_model_and_co_evolutionary_curriculum_for_rl_ba.md
     - 'FoundIR-v2: Optimizing Pre-Training Data Mixtures for Image Restoration Foundation Model': CVPR2026/image_restoration/foundir-v2_optimizing_pre-training_data_mixtures_for_image_restoration_foundatio.md
     - 'From Events to Clarity: The Event-Guided Diffusion Framework for Dehazing': CVPR2026/image_restoration/from_events_to_clarity_the_event-guided_diffusion_framework_for_dehazing.md
@@ -5864,7 +5865,7 @@ nav:
     - 'VERINA: Benchmarking Verifiable Code Generation': ICLR2026/code_intelligence/verina_benchmarking_verifiable_code_generation.md
     - 'VisCoder2: Building Multi-Language Visualization Coding Agents': ICLR2026/code_intelligence/viscoder2_building_multi-language_visualization_coding_agents.md
     - 'WebGen-Agent: Enhancing Interactive Website Generation with Multi-Level Feedback and Step-Level Reinforcement Learning': ICLR2026/code_intelligence/webgen-agent_enhancing_interactive_website_generation_with_multi-level_feedback_.md
-  - 🎨 Image Generation (352):
+  - 🎨 Image Generation (353):
     - 🎨 Image Generation: ICLR2026/image_generation/index.md
     - A Hidden Semantic Bottleneck in Conditional Embeddings of Diffusion Transformers: ICLR2026/image_generation/a_hidden_semantic_bottleneck_in_conditional_embeddings_of_diffusion_transformers.md
     - A Noise is Worth Diffusion Guidance: ICLR2026/image_generation/a_noise_is_worth_diffusion_guidance.md
@@ -6063,6 +6064,7 @@ nav:
     - Learning a Distance Measure from the Information-Estimation Geometry of Data: ICLR2026/image_generation/learning_a_distance_measure_from_the_information-estimation_geometry_of_data.md
     - Learning an Image Editing Model without Image Editing Pairs: ICLR2026/image_generation/learning_an_image_editing_model_without_image_editing_pairs.md
     - Learning AND-OR Templates for Compositional Representation in Art and Design: ICLR2026/image_generation/learning_andor_templates_for_compositional_representation_in_art_and_design.md
+    - Learning to Generate Stylized Handwritten Text via a Unified Representation of Style, Content, and Noise: ICLR2026/image_generation/learning_to_generate_stylized_handwritten_text_via_a_unified_representation_of_s.md
     - 'Let Features Decide Their Own Solvers: Hybrid Feature Caching for Diffusion Transformers': ICLR2026/image_generation/let_features_decide_their_own_solvers_hybrid_feature_caching_for_diffusion_trans.md
     - 'LLM2Fx-Tools: Tool Calling for Music Post-Production': ICLR2026/image_generation/llm2fx-tools_tool_calling_for_music_post-production.md
     - Locality-aware Parallel Decoding for Efficient Autoregressive Image Generation: ICLR2026/image_generation/locality-aware_parallel_decoding_for_efficient_autoregressive_image_generation.md
@@ -6537,7 +6539,7 @@ nav:
     - 'WorldSense: Evaluating Real-World Omnimodal Understanding for Multimodal LLMs': ICLR2026/multimodal_vlm/worldsense_evaluating_real-world_omnimodal_understanding_for_multimodal_llms.md
     - 'XModBench: Benchmarking Cross-Modal Capabilities and Consistency in Omni-Language Models': ICLR2026/multimodal_vlm/xmodbench_benchmarking_cross-modal_capabilities_and_consistency_in_omni-language.md
     - Zero-shot HOI Detection with MLLM-based Detector-agnostic Interaction Recognition: ICLR2026/multimodal_vlm/zero-shot_hoi_detection_with_mllm-based_detector-agnostic_interaction_recognitio.md
-  - 🧠 VLM Reasoning (111):
+  - 🧠 VLM Reasoning (112):
     - 🧠 VLM Reasoning: ICLR2026/vlm_reasoning/index.md
     - 'AdaReasoner: Dynamic Tool Orchestration for Iterative Visual Reasoning': ICLR2026/vlm_reasoning/adareasoner_dynamic_tool_orchestration_for_iterative_visual_reasoning.md
     - 'Agent-X: Evaluating Deep Multimodal Reasoning in Vision-Centric Agentic Tasks': ICLR2026/vlm_reasoning/agent-x_evaluating_deep_multimodal_reasoning_in_vision-centric_agentic_tasks.md
@@ -6589,6 +6591,7 @@ nav:
       : ICLR2026/vlm_reasoning/mm-helix_boosting_multimodal_long-chain_reflective_reasoning_with_holistic_platf.md
     - 'MMR-Life: Piecing Together Real-life Scenes for Multimodal Multi-image Reasoning': ICLR2026/vlm_reasoning/mmr-life_piecing_together_real-life_scenes_for_multimodal_multi-image_reasoning.md
     - 'MMR-V: What''s Left Unsaid? A Benchmark for Multimodal Deep Reasoning in Videos': ICLR2026/vlm_reasoning/mmr-v_whats_left_unsaid_a_benchmark_for_multimodal_deep_reasoning_in_videos.md
+    - 'MMReD: A Cross-Modal Benchmark for Dense Context Reasoning': ICLR2026/vlm_reasoning/mmred_a_cross-modal_benchmark_for_dense_context_reasoning.md
     - More Thought, Less Accuracy? On the Dual Nature of Reasoning in Vision-Language Models: ICLR2026/vlm_reasoning/more_thought_less_accuracy_on_the_dual_nature_of_reasoning_in_vision-language_mo.md
     - 'NePTune: A Neuro-Pythonic Framework for Tunable Compositional Reasoning on Vision-Language': ICLR2026/vlm_reasoning/neptune_a_neuro-pythonic_framework_for_tunable_compositional_reasoning_on_vision.md
     - 'No Labels, No Problem: Training Visual Reasoners with Multimodal Verifiers': ICLR2026/vlm_reasoning/no_labels_no_problem_training_visual_reasoners_with_multimodal_verifiers.md
@@ -7205,7 +7208,7 @@ nav:
     - 'UniHand: A Unified Model for Diverse Controlled 4D Hand Motion Modeling': ICLR2026/human_understanding/unihand_a_unified_model_for_diverse_controlled_4d_hand_motion_modeling.md
     - Unleashing Guidance Without Classifiers for Human-Object Interaction Animation: ICLR2026/human_understanding/unleashing_guidance_without_classifiers_for_human-object_interaction_animation.md
     - Zero-Shot Human Pose Estimation Using Diffusion-Based Inverse Solvers: ICLR2026/human_understanding/zero-shot_human_pose_estimation_using_diffusion-based_inverse_solvers.md
-  - 📹 Video Understanding (47):
+  - 📹 Video Understanding (48):
     - 📹 Video Understanding: ICLR2026/video_understanding/index.md
     - A Training-Free Framework for Long Video Understanding via Video-Query-Options Similarity: ICLR2026/video_understanding/a_training-free_framework_for_long_video_understanding_via_video-query-options_s.md
     - 'A.I.R.: Adaptive, Iterative, and Reasoning-based Frame Selection For Video Question Answering': ICLR2026/video_understanding/air_enabling_adaptive_iterative_and_reasoning-based_frame_selection_for_video_qu.md
@@ -7230,6 +7233,7 @@ nav:
     - Language-guided Open-world Video Anomaly Detection under Weak Supervision: ICLR2026/video_understanding/language-guided_open-world_video_anomaly_detection_under_weak_supervision.md
     - 'Let''s Split Up: Zero-Shot Classifier Edits for Fine-Grained Video Understanding': ICLR2026/video_understanding/lets_split_up_zero-shot_classifier_edits_for_fine-grained_video_understanding.md
     - 'LLaVAction: Evaluating and Training Multi-modal Large Language Models for Action Understanding': ICLR2026/video_understanding/llavaction_evaluating_and_training_multi-modal_large_language_models_for_action_.md
+    - 'Map the Flow: Revealing Hidden Pathways of Information in VideoLLMs': ICLR2026/video_understanding/map_the_flow_revealing_hidden_pathways_of_information_in_videollms.md
     - 'Measure Twice, Cut Once: A Semantic-Oriented Approach to Video Temporal Localization with Video LLMs': ICLR2026/video_understanding/measure_twice_cut_once_a_semantic-oriented_approach_to_video_temporal_localizati.md
     - 'Memento: Toward an All-Day Proactive Assistant for Ultra-Long Streaming Video': ICLR2026/video_understanding/memento_toward_an_all-day_proactive_assistant_for_ultra-long_streaming_video.md
     - 'OmniCVR: A Benchmark for Omni-Composed Video Retrieval with Vision, Audio, and Text': ICLR2026/video_understanding/omnicvr_a_benchmark_for_omni-composed_video_retrieval_with_vision_audio_and_text.md
@@ -8888,7 +8892,7 @@ nav:
     - 'GmNet: Revisiting Gating Mechanisms From A Frequency View': ICLR2026/model_compression/gmnet_revisiting_gating_mechanisms_from_a_frequency_view.md
     - 'GPTailor: Large Language Model Pruning Through Layer Cutting and Stitching': ICLR2026/model_compression/gptailor_large_language_model_pruning_through_layer_cutting_and_stitching.md
     - Gradient-Aligned Calibration for Post-Training Quantization of Diffusion Models: ICLR2026/model_compression/gradient-aligned_calibration_for_post-training_quantization_of_diffusion_models.md
-    - Gradient Intrinsic Dimensionality Alignment：Narrowing The Gap Between Low-Rank Adaptation and Full Fine-Tuning: ICLR2026/model_compression/gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md
+    - 'Gradient Intrinsic Dimensionality Alignment: Bridging the Gap between LoRA and Full Fine-Tuning': ICLR2026/model_compression/gradient_intrinsic_dimensionalityalignmentnarrowing_the_gap_between_low-rank_ad.md
     - 'GradPruner: Gradient-guided Layer Pruning Enabling Efficient Fine-Tuning and Inference for LLMs': ICLR2026/model_compression/gradpruner_gradient-guided_layer_pruning_enabling_efficient_fine-tuning_and_infe.md
     - Grounding and Enhancing Informativeness and Utility in Dataset Distillation: ICLR2026/model_compression/grounding_and_enhancing_informativeness_and_utility_in_dataset_distillation.md
     - 'HEAPr: Hessian-based Efficient Atomic Expert Pruning in Output Space': ICLR2026/model_compression/heapr_hessian-based_efficient_atomic_expert_pruning_in_output_space.md
@@ -9693,7 +9697,7 @@ nav:
     - 'Steering the Herd: A Framework for LLM-Based Control of Social Learning': ICLR2026/social_computing/steering_the_herd_a_framework_for_llm-based_control_of_social_learning.md
     - The Value of Information in Human-AI Decision-Making: ICLR2026/social_computing/the_value_of_information_in_human-ai_decision-making.md
     - Tracing and Reversing Edits in LLMs: ICLR2026/social_computing/tracing_and_reversing_edits_in_llms.md
-  - 🛡️ AI Safety (140):
+  - 🛡️ AI Safety (141):
     - 🛡️ AI Safety: ICLR2026/ai_safety/index.md
     - A Bayesian Nonparametric Framework for Private, Fair, and Balanced Tabular Data Synthesis: ICLR2026/ai_safety/a_bayesian_nonparametric_framework_for_private_fair_and_balanced_tabular_data_sy.md
     - A Fair Bayesian Inference through Matched Gibbs Posterior: ICLR2026/ai_safety/a_fair_bayesian_inference_through_matched_gibbs_posterior.md
@@ -9793,6 +9797,7 @@ nav:
     - Private Rate-Constrained Optimization with Applications to Fair Learning: ICLR2026/ai_safety/private_rate-constrained_optimization_with_applications_to_fair_learning.md
     - Protection against Source Inference Attacks in Federated Learning: ICLR2026/ai_safety/protection_against_source_inference_attacks_in_federated_learning.md
     - Reducing Information Dependency Does Not Cause Training Data Privacy. Adversarially Non-Robust Features Do.: ICLR2026/ai_safety/reducing_information_dependency_does_not_cause_training_data_privacy_adversarial.md
+    - Reliable Poisoned Sample Detection against Backdoor Attacks Enhanced by Sharpness-Aware Minimization: ICLR2026/ai_safety/reliable_poisoned_sample_detection_against_backdoor_attacks_enhanced_by_sharpnes.md
     - Remaining-data-free Machine Unlearning by Suppressing Sample Contribution: ICLR2026/ai_safety/remaining-data-free_machine_unlearning_by_suppressing_sample_contribution.md
     - 'RESFL: An Uncertainty-Aware Framework for Responsible Federated Learning by Balancing Privacy, Fairness and Utility': ICLR2026/ai_safety/resfl_an_uncertainty-aware_framework_for_responsible_federated_learning_by_balan.md
     - Rethinking LoRA for Privacy-Preserving Federated Learning in Large Models: ICLR2026/ai_safety/rethinking_lora_for_privacy-preserving_federated_learning_in_large_models.md
